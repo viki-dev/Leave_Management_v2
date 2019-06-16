@@ -1,0 +1,25 @@
+<wm-page pagetitle="Test 1" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-container name="container1">
+                <wm-composite name="composite1">
+                    <wm-label class="col-md-3 control-label" name="label1" caption="Department"></wm-label>
+                    <wm-container class="col-md-9" name="container3">
+                        <wm-text name="text1"></wm-text>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container2">
+                <wm-table editmode="inline" name="departmentTable1" title="" dataset="bind:Variables.department.dataSet" navigation="Basic">
+                    <wm-table-column binding="name" caption="Name" pcdisplay="true" mobiledisplay="true"></wm-table-column>
+                    <wm-table-action widget-type="button" key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                    <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow($event)"></wm-table-row-action>
+                    <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow($event)"></wm-table-row-action>
+                </wm-table>
+            </wm-container>
+            <wm-label padding="unset 0.5em" name="label5" caption="" on-click="Variables.createDept.invoke();label5Click($event, widget)"></wm-label>
+            <wm-button class="btn-default" caption="Button" type="button" margin="unset 0.5em" name="button1" on-click="button1Click($event, widget)"></wm-button>
+            <wm-label padding="unset 0.5em" name="label4" show="true"></wm-label>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

@@ -1,0 +1,7 @@
+{
+  "id" : "MyJavaService1",
+  "type" : "JavaService",
+  "packageNames" : [ "com.leave_management_v2.myjavaservice1" ],
+  "serviceClassNames" : [ "com.leave_management_v2.myjavaservice1.MyJavaService1" ],
+  "title" : "MyJavaService1"
+}

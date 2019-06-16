@@ -1,0 +1,44 @@
+<wm-page pagetitle="My Leave" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-tabs name="tabs1">
+                <wm-tabpane name="tabpane1" title="leave pending approval">
+                    <wm-label padding="unset 0.5em" name="label1" caption="bind:Variables.cancelLeave.dataSet.value"></wm-label>
+                    <wm-table editmode="inline" name="VacationTable1" title="Vacation List" dataset="bind:Variables.HrdbVacationData.dataSet" navigation="Basic">
+                        <wm-table-column binding="employee.name" caption="Employee Name" edit-widget-type="text" related-entity-name="Employee" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                        <wm-table-column binding="startDate" caption="Start Date" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="endDate" caption="End Date" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="type" caption="Type" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                        <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="Variables.cancelLeave.invoke();Variables.HrdbVacationData.listRecords()"
+                            disabled="false" widget-type="button"></wm-table-row-action>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane2" title="approved leaves">
+                    <wm-table editmode="inline" name="VacationTable2" title="Vacation List" dataset="bind:Variables.HrdbVacationData1.dataSet" navigation="Basic">
+                        <wm-table-column binding="employee.name" caption="Employee Name" edit-widget-type="text" related-entity-name="Employee" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                        <wm-table-column binding="startDate" caption="Start Date" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="endDate" caption="End Date" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="status" caption="Status" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="type" caption="Type" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                        <wm-table-column binding="rowOperations" caption="Actions" width="120px" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                        <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow($event)" disabled="false" widget-type="button"></wm-table-row-action>
+                    </wm-table>
+                </wm-tabpane>
+                <wm-tabpane name="tabpane3" title="rejected leaves">
+                    <wm-table name="VacationTable3" title="Vacation List" dataset="bind:Variables.HrdbVacationData2.dataSet" navigation="Basic">
+                        <wm-table-column binding="employee.name" caption="Employee Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Employee" readonly="true"></wm-table-column>
+                        <wm-table-column binding="startDate" caption="Start Date" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
+                        <wm-table-column binding="endDate" caption="End Date" generator="assigned" pcdisplay="true" mobiledisplay="true" type="date"></wm-table-column>
+                        <wm-table-column binding="status" caption="Status" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                        <wm-table-column binding="type" caption="Type" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    </wm-table>
+                </wm-tabpane>
+            </wm-tabs>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

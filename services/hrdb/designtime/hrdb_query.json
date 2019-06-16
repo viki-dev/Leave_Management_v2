@@ -1,0 +1,143 @@
+{
+  "AddLeaveBal" : {
+    "name" : "AddLeaveBal",
+    "description" : "add leave balance",
+    "version" : "V2",
+    "queryString" : "update EMPLOYEE set LEAVE_BALANCE = :bal where EMP_ID = :id",
+    "countQueryString" : null,
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "bal",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "6",
+      "required" : true
+    }, {
+      "name" : "id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.leave_management_v2.hrdb.models.query.AddLeaveBalRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  },
+  "ApplyLeave" : {
+    "name" : "ApplyLeave",
+    "description" : "Query for apply leave",
+    "version" : "V2",
+    "queryString" : "insert into VACATION(START_DATE,END_DATE,EMP_ID,STATUS,TYPE) values (:srt,:end,:emp_id,:status,:type)",
+    "countQueryString" : null,
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "INSERT",
+    "parameters" : [ {
+      "name" : "srt",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2019-06-09",
+      "required" : true
+    }, {
+      "name" : "end",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2019-06-10",
+      "required" : true
+    }, {
+      "name" : "emp_id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : true
+    }, {
+      "name" : "status",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "pending",
+      "required" : true
+    }, {
+      "name" : "type",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "Personal Leave",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.leave_management_v2.hrdb.models.query.ApplyLeaveRequest",
+      "method" : "POST"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  },
+  "ApproveRejectQuery" : {
+    "name" : "ApproveRejectQuery",
+    "description" : "Query for Approve Reject",
+    "version" : "V2",
+    "queryString" : "update VACATION set STATUS = :status where ID = :id",
+    "countQueryString" : null,
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "status",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "Approved",
+      "required" : true
+    }, {
+      "name" : "id",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.leave_management_v2.hrdb.models.query.ApproveRejectQueryRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  }
+}

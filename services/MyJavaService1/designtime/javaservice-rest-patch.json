@@ -1,0 +1,46 @@
+{
+  "description" : null,
+  "methods" : {
+    "add" : [ {
+      "url" : {
+        "value" : "/add",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "POST",
+        "modified" : false
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "name" : {
+          "name" : {
+            "value" : "name",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        },
+        "empl" : {
+          "name" : {
+            "value" : "empl",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ]
+  }
+}

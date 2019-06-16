@@ -3,9 +3,24 @@
     <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
     <wm-content name="content">
         <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
-        <wm-page-content columnwidth="8" paddingleft="15" paddingright="15" name="mainContent">
+        <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px">
+            <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="VacationList1" dataset="bind:Variables.HrdbVacationData.dataSet" navigation="Basic">
+                <wm-listtemplate layout="media" name="listtemplate1">
+                    <wm-container class="media-left media-top" name="container1">
+                        <wm-picture name="Picture" class="media-object" width="32pt" height="32pt"></wm-picture>
+                    </wm-container>
+                    <wm-container class="media-body" padding="unset 1.5em unset 1.25em" name="container2">
+                        <wm-label class="pull-left" caption="bind:Variables.HrdbVacationData.dataSet.id" name="Name" margin="0em unset 0.5em unset" fontsize="1.143" fontunit="em"></wm-label>
+                        <wm-label name="Time" class="pull-right text-muted" caption="bind:Variables.HrdbVacationData.dataSet.type"></wm-label>
+                        <wm-label caption="bind:Variables.HrdbVacationData.dataSet.status" name="Description" class="p text-muted"></wm-label>
+                        <wm-container name="container4"></wm-container>
+                    </wm-container>
+                    <wm-container class="media-right" horizontalalign="right" padding="unset 1em unset unset" name="container3">
+                        <wm-menu autoclose="outsideClick" caption="" type="anchor" iconclass="wi wi-more-vert" menuposition="down,left" name="menu1"></wm-menu>
+                    </wm-container>
+                </wm-listtemplate>
+            </wm-list>
         </wm-page-content>
-        <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>
     <wm-footer name="footer" content="footer"></wm-footer>
 </wm-page>

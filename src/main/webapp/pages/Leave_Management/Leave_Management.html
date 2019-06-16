@@ -1,0 +1,22 @@
+<wm-page pagetitle="Leave Management" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-table editmode="inline" name="VacationTable1" title="Vacation List" dataset="bind:Variables.HrdbVacationData.dataSet" navigation="Basic">
+                <wm-table-column binding="employee.name" caption="Employee Name" width="100px" edit-widget-type="text" related-entity-name="Employee" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                <wm-table-column binding="startDate" caption="Start Date" width="100px" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="endDate" caption="End Date" width="100px" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="type" caption="Type" width="100px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                <wm-table-row-action key="updaterow" display-name="Approve" show="true" class="btn-primary" iconclass="" title="Approve" action="Variables.approveLeave.invoke();Variables.HrdbVacationData.listRecords()" disabled="false"
+                    widget-type="button"></wm-table-row-action>
+                <wm-table-row-action key="deleterow" display-name="Reject" show="true" class="btn-danger" iconclass="" title="Reject" action="Variables.rejectLeave.invoke();Variables.HrdbVacationData.listRecords()" disabled="false"
+                    widget-type="button"></wm-table-row-action>
+            </wm-table>
+            <wm-label padding="unset 0.5em" name="label1" caption="bind:Variables.rejectLeave.dataSet.value"></wm-label>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+</wm-page>

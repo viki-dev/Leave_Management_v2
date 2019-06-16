@@ -1,13 +1,13 @@
 [ {
-  "name" : "admin",
+  "name" : "Manager",
   "description" : null,
   "roleConfig" : {
-    "landingPage" : null
+    "landingPage" : "Main"
   }
 }, {
-  "name" : "user",
+  "name" : "Employee",
   "description" : null,
   "roleConfig" : {
-    "landingPage" : null
+    "landingPage" : "Main"
   }
 } ]

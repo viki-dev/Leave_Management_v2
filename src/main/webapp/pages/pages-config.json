@@ -1,6 +1,14 @@
 [ {
+  "name" : "Apply_Leave",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Common",
   "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Leave_Management",
+  "type" : "PAGE",
   "params" : [ ]
 }, {
   "name" : "Login",
@@ -8,6 +16,14 @@
   "params" : [ ]
 }, {
   "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "My_Leave",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Test1",
   "type" : "PAGE",
   "params" : [ ]
 }, {
@@ -25,6 +41,10 @@
 }, {
   "name" : "rightnav",
   "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "test",
+  "type" : "PAGE",
   "params" : [ ]
 }, {
   "name" : "topnav",

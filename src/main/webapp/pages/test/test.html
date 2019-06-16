@@ -1,0 +1,43 @@
+<wm-page pagetitle="Test" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-button class="btn-default" caption="Button" type="button" margin="unset 0.5em" name="button1" on-click="Variables.HrdbCreateDepartment1.invoke();button1Click($event, widget)"></wm-button>
+            <wm-label padding="unset 0.5em" name="label2_1" caption="bind:Variables.HrdbCreateDepartment1.dataSet.deptId"></wm-label>
+            <wm-liveform errormessage="" title="Department Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.HrdbDepartmentData.dataSet" captionalign="left" captionposition="right" name="DepartmentLiveForm1">
+                <wm-layoutgrid columns="1" name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                            <wm-form-field name="name" displayname="Name" show="true" primary-key="false" generator="assigned" key="name" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-form-field name="deptId" displayname="Dept Id" show="false" primary-key="true" generator="identity" key="deptId" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-secondary" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" widget-type="button" type="button" update-mode="true"></wm-form-action>
+                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="DepartmentLiveForm1_saveAction($event)" disabled="false" widget-type="button" type="submit"
+                    update-mode="true"></wm-form-action>
+            </wm-liveform>
+            <wm-table editmode="inline" name="EmployeeTable1" title="Employee List" dataset="bind:Variables.serviceVariable2.dataSet" navigation="Basic">
+                <wm-table-column binding="empId" caption="Emp Id" primary-key="true" edit-widget-type="number" type="integer" generator="identity" readonly="true" show="true"></wm-table-column>
+                <wm-table-column binding="name" caption="Name" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="username" caption="Username" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="password" caption="Password" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="role" caption="Role" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="leaveBalance" caption="Leave Balance" primary-key="false" edit-widget-type="number" type="integer" generator="assigned" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="department.deptId" caption="Dept Id" primary-key="true" edit-widget-type="number" related-entity-name="Department" type="integer" generator="identity" defaultvalue="bind:Widgets.DepartmentLiveForm1.dataoutput.deptId"
+                    show="true" readonly="false" disabled="true"></wm-table-column>
+                <wm-table-column binding="department.name" caption="Department Name" primary-key="false" edit-widget-type="text" related-entity-name="Department" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                <wm-table-column binding="employeeByManagerId.empId" caption="manager Id" primary-key="true" edit-widget-type="number" related-entity-name="Employee" type="integer" generator="identity" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="employeeByManagerId.name" caption="Id Name" primary-key="false" edit-widget-type="text" related-entity-name="Employee" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                <wm-table-column binding="employeeByManagerId.username" caption="Id Username" primary-key="false" edit-widget-type="text" related-entity-name="Employee" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                <wm-table-column binding="employeeByManagerId.password" caption="Id Password" primary-key="false" edit-widget-type="text" related-entity-name="Employee" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                <wm-table-column binding="employeeByManagerId.role" caption="Id Role" primary-key="false" edit-widget-type="text" related-entity-name="Employee" type="string" generator="assigned" readonly="true" show="true"></wm-table-column>
+                <wm-table-column binding="employeeByManagerId.leaveBalance" caption="Leave Balance" primary-key="false" edit-widget-type="number" related-entity-name="Employee" type="integer" generator="assigned" readonly="true" show="true"></wm-table-column>
+                <wm-table-column binding="employeeByManagerId.managerId" caption="Manager Id" primary-key="false" edit-widget-type="number" related-entity-name="Employee" type="integer" generator="assigned" readonly="true" show="true"></wm-table-column>
+                <wm-table-column binding="rowOperations" caption="Actions" width="120px" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false" widget-type="button"></wm-table-action>
+                <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow($event)" disabled="false" widget-type="button"></wm-table-row-action>
+                <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow($event)" disabled="false" widget-type="button"></wm-table-row-action>
+            </wm-table>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

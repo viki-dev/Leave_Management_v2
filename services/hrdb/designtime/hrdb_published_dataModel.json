@@ -1,0 +1,249 @@
+{
+  "cascadeEnabled" : false,
+  "dataLockingOptions" : {
+    "versionColumnName" : "VERSION",
+    "lockingStrategy" : "NONE"
+  },
+  "description" : "hrdb",
+  "draft" : false,
+  "name" : "hrdb",
+  "packageName" : "com.leave_management_v2.hrdb",
+  "tables" : [ {
+    "catalog" : "hrdb",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "deptId",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "DEPT_ID",
+      "nullable" : false,
+      "oldName" : "DEPT_ID",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "name",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "NAME",
+      "nullable" : true,
+      "oldName" : "NAME",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    } ],
+    "constraints" : [ ],
+    "entityName" : "Department",
+    "filter" : null,
+    "fullyQualifiedName" : "com.leave_management_v2.hrdb.Department",
+    "ignoreRefreshAfterInsert" : false,
+    "name" : "DEPARTMENT",
+    "oldName" : "DEPARTMENT",
+    "primaryKey" : {
+      "columns" : [ "DEPT_ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ ],
+    "schema" : null,
+    "tableDataLockingOptions" : {
+      "versionColumnName" : "VERSION",
+      "lockingStrategy" : "NONE",
+      "overrideStrategy" : "INHERIT"
+    },
+    "temporals" : [ ],
+    "type" : "TABLE"
+  }, {
+    "catalog" : "hrdb",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : false,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "fieldName" : "empId",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "EMP_ID",
+      "nullable" : false,
+      "oldName" : "EMP_ID",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "fieldName" : "name",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "NAME",
+      "nullable" : true,
+      "oldName" : "NAME",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "fieldName" : "deptId",
+      "foreignKey" : true,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "DEPT_ID",
+      "nullable" : true,
+      "oldName" : "DEPT_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    } ],
+    "constraints" : [ ],
+    "entityName" : "Employee",
+    "filter" : null,
+    "fullyQualifiedName" : "com.leave_management_v2.hrdb.Employee",
+    "ignoreRefreshAfterInsert" : false,
+    "name" : "EMPLOYEE",
+    "oldName" : "EMPLOYEE",
+    "primaryKey" : {
+      "columns" : [ "EMP_ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ {
+      "cardinality" : "ManyToOne",
+      "cascadeEnabled" : true,
+      "cascadeOptions" : {
+        "cascadeRemove" : "NONE",
+        "cascadeReplace" : true
+      },
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fetchOptions" : {
+        "fetch" : true,
+        "columnsFilter" : [ ]
+      },
+      "fieldName" : "department",
+      "ignored" : false,
+      "mappings" : [ {
+        "sourceColumn" : "DEPT_ID",
+        "targetColumn" : "DEPT_ID"
+      } ],
+      "name" : "FK_DEPARTMENT_TO_EMPLOYEy0eG6",
+      "parentFetchOptions" : {
+        "fetch" : false,
+        "columnsFilter" : [ ]
+      },
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "EMPLOYEE",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "DEPARTMENT",
+      "valid" : true,
+      "virtual" : false
+    } ],
+    "schema" : null,
+    "tableDataLockingOptions" : {
+      "versionColumnName" : "VERSION",
+      "lockingStrategy" : "NONE",
+      "overrideStrategy" : "INHERIT"
+    },
+    "temporals" : [ ],
+    "type" : "TABLE"
+  } ]
+}

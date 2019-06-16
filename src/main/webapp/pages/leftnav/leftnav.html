@@ -4,13 +4,13 @@
             <wm-anchor caption="Dashboard" name="dashboardLink" iconclass="wi wi-bar-graph"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_order">
-            <wm-anchor caption="Pending Orders" name="orderLink" iconclass="wi wi-file"></wm-anchor>
+            <wm-anchor caption="Apply Leave" name="orderLink" iconclass="wi wi-file" on-click="Actions.goToPage_Apply_Leave.invoke()" accessroles="Employee"></wm-anchor>
         </wm-nav-item>
         <wm-nav-item name="list_inventory">
-            <wm-anchor caption="Inventory" name="inventoryLink" iconclass="wi wi-tag"></wm-anchor>
+            <wm-anchor caption="My Leave" name="inventoryLink" iconclass="wi wi-tag" on-click="Actions.goToPage_My_Leave.invoke()" accessroles="Employee"></wm-anchor>
         </wm-nav-item>
-        <wm-nav-item name="list_support">
-            <wm-anchor caption="Support Calls" name="supportLink" iconclass="wi wi-envelope"></wm-anchor>
+        <wm-nav-item name="nav_item4">
+            <wm-anchor name="anchor4" iconclass="wi wi-file" caption="Leave Management" on-click="Actions.goToPage_Leave_Management.invoke()" accessroles="Manager"></wm-anchor>
         </wm-nav-item>
     </wm-nav>
 </wm-partial>

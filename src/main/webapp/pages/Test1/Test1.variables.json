@@ -1,0 +1,98 @@
+{
+  "department" : {
+    "_id" : "wm-createdep-wm.Variable-1560512165905",
+    "name" : "department",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : ""
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "serviceVariable1" : {
+    "_id" : "wm-serviceVariable1-wm.ServiceVariable-1560700436415",
+    "name" : "serviceVariable1",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "name",
+      "value" : "bind:Widgets.text1.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "object",
+    "service" : "MyJavaService1",
+    "operation" : "add",
+    "operationId" : "MyJavaService1Controller_add",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "MyJavaService1"
+  },
+  "serviceVariable2" : {
+    "_id" : "wm-serviceVariable2-wm.ServiceVariable-1560512422334",
+    "name" : "serviceVariable2",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "Department.name",
+      "value" : "bind:Widgets.text1.datavalue",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "Department.employees",
+      "value" : "bind:Variables.department.dataSet[$i].name",
+      "type" : "com.leave_management_v2.hrdb.Employee"
+    } ],
+    "type" : "com.leave_management_v2.hrdb.Department",
+    "service" : "hrdb",
+    "operation" : "createDepartment",
+    "operationId" : "DepartmentController_createDepartment",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Department"
+  },
+  "serviceVariable3" : {
+    "_id" : "wm-serviceVariable3-wm.ServiceVariable-1560700785305",
+    "name" : "serviceVariable3",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "name",
+      "value" : "bind:Widgets.text1.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "string",
+    "service" : "MyJavaService1",
+    "operation" : "add",
+    "operationId" : "MyJavaService1Controller_add",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "MyJavaService1"
+  }
+}

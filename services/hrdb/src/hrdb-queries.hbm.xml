@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="AddLeaveBal">
+        <![CDATA[
+        update EMPLOYEE set LEAVE_BALANCE = :bal where EMP_ID = :id
+        ]]>
+    <query-param name="bal" type="java.lang.Integer"/>
+    <query-param name="id" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="ApplyLeave">
+        <![CDATA[
+        insert into VACATION(START_DATE,END_DATE,EMP_ID,STATUS,TYPE) values (:srt,:end,:emp_id,:status,:type)
+        ]]>
+    <query-param name="srt" type="java.sql.Date"/>
+    <query-param name="end" type="java.sql.Date"/>
+    <query-param name="emp_id" type="java.lang.Integer"/>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="type" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="ApproveRejectQuery">
+        <![CDATA[
+        update VACATION set STATUS = :status where ID = :id
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="id" type="java.lang.Integer"/>
+    </sql-query>
+</hibernate-mapping>
